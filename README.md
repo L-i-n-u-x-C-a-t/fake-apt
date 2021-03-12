@@ -1,4 +1,7 @@
 # fake-apt
+fake-apt is now in 3 languages : C# (.NET), C and C++. @NinjaCheetah did the C# and C versions and i ported the code to C++.
+
+# Original .NET description : 
 A fun little program I made in .NET 5, just goes through a fake apt install process. Simply load it up (instructions below), enter a package name after the pre-typed `sudo apt install`, and watch it go! Fool your friends... maybe.
 ## Running the thing
 First, go to the Actions tab, then find the latest (successful) run and download the "fakeApt-latest" zip. Extract that to a folder you can access easily.
