@@ -37,6 +37,16 @@ macX86:
 macARM:
 	mkdir -p bin/
 	gcc -o bin/$(TARGET)ARM -target arm64-apple-macos11 $(TARGET)/main.c
+	
+#please note that i never had a mac so i have no idea about building on it. if it doesnt work then idk
 
+macX86pp:
+	mkdir -p bin/
+	g++ -o bin/$(TARGET)X86 -target x86_64-apple-macos10.12 $(TARGETPP)/main.cpp
+	
+macARMpp:
+	mkdir -p bin/
+	g++ -o bin/$(TARGET)ARM -target arm64-apple-macos11 $(TARGET)/main.cpp
+	
 clean:
 	rm -f bin/* rm -d bin/
