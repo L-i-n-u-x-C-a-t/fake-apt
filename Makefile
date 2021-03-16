@@ -2,9 +2,6 @@ CC = gcc
 TARGET = fake-apt
 TARGETPP = fake-apt++
 
-all: linux win32 win64
-allpp: linuxpp win32pp win64pp
-
 linux:
 	mkdir -p bin/
 	$(CC) $(TARGET)/main.c -o bin/$(TARGET)
@@ -12,22 +9,6 @@ linux:
 linuxpp:
 	mkdir -p bin/
 	g++ $(TARGETPP)/main.cpp -o bin/$(TARGETPP)
-
-win32:
-	mkdir -p bin/
-	i686-w64-mingw32-gcc -o bin/$(TARGET)32.exe $(TARGET)/main.c
-	
-win32pp:
-	mkdir -p bin/
-	i686-w64-mingw32-g++ -o bin/$(TARGET)32.exe $(TARGET)/main.cpp
-
-win64:
-	mkdir -p bin/
-	x86_64-w64-mingw32-gcc -o bin/$(TARGET)64.exe $(TARGET)/main.c
-
-win64:
-	mkdir -p bin/
-	x86_64-w64-mingw32-g++ -o bin/$(TARGETPP)64.exe $(TARGETPP)/main.cpp
 
 # Note that the mac executables can only be compiled on mac
 macX86:
