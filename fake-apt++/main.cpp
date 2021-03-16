@@ -34,9 +34,6 @@ void getRand(int *var,int maxNum){ //the C code works in C++ so...  I just chang
 }
 void clrScrn() { //This also works in C++, changed to void too
     // Screen clear function, checks OS first for compatibility:tm:
-    #ifdef _WIN32
-        system("cls");
-    #endif
     #ifdef unix
         system("clear");
     #endif
@@ -106,7 +103,7 @@ int main(void){
         printf("\e[1;32m%s@%s\e[0m:\e[1;34m~\e[0m$ sudo apt install ",usr,host);
     #endif
     #ifdef __APPLE__
-
+        std::cout << usr << ":~" << host << "$ sudo apt install ";
     #endif
     std::cin >> fakePackage;
     // Now that we have the package, we can assemble the dependency using the pre-generated suffix
